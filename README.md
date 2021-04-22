@@ -47,6 +47,6 @@ Note: Test results can be found in [here](./logs/test_results.txt). I don't have
 
 3. Another possible reason for slow training (which is accentuated by previous reason) is that I am directly regressing on the raw user engagement numbers. There is a huge variance in upvotes values with some values being in thousands (highest ~21K, lowest 0). Thus, I would need to have some sort of normalization but it is not directly clear what it should be since there in no pre-defined range. 
 4. **Implementing a data-loader for huge file was new thing to me.** For the time being, I implemenetd a simple solution which uses the PyTorch's 'map-style' dataset. But it is slow. Thus, I would try to implement 'iterable-style' dataset (I tried it out but there were some issues such as duplicate data on multiple workers, not being able to randomize the training data etc.)
-5. Right now, my model used news tilte as the input but I think other features like user_name (assumption: correlation between popular user and respective engagement) or time. 
+5. Right now, my model uses only the news tilte as the input but I think other features like user_name (assumption: correlation between popular user and respective engagement) or time that can might also be predictive of user-engagement. 
 
 
