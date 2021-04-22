@@ -21,6 +21,7 @@ Create a virtual environment (preferably).
 ## Usage
 ### Create the train, val and test data (3 seperate csv files)
 `python create_data.py`
+<br />
 Note: This is just to ease the training process. I directly load the file into the memroy in this case. I was more focused on model training with huge file. 
 
 ### Training
