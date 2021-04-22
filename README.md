@@ -40,7 +40,7 @@ Note: Test results can be found in [here](./logs/test_results.txt). I don't have
 
 ## Possible Solutions and Future
 1. Implement a simple TF-IDF based solution to be used as a baseline.
-2. In my current setup, I am clipping the gradient norm at 1 which is considered to be a good practice. Both the training and validation loss are going down as can be seen here, but it is very slow and requires a lot more training. ![image](https://user-images.githubusercontent.com/5251592/115666003-a1d42480-a309-11eb-8c7f-5448fe0ec598.png)
+2. In my current setup, I am clipping the gradient norm at 1 which is considered to be a good practice. Both the training and validation loss are going down, but it is very slow and requires a lot more training. <br /> The following are the training and validation curves for 5 epochs. ![image](https://user-images.githubusercontent.com/5251592/115666003-a1d42480-a309-11eb-8c7f-5448fe0ec598.png) <br /> The following are the training and validation curves for 50 epochs (it is still running and taking way too much time given my limited resources). **The main point is that there is huge improvement here (2.9e5 --> 2.8e5) but I need to consider some form of normalization as mentioned in the next point.**
 ![image](https://user-images.githubusercontent.com/5251592/115666056-b57f8b00-a309-11eb-92dd-26875ef25eee.png)
 
 3. Another possible reason for slow training (which is accentuated by previous reason) is that I am directly regressing on the raw user engagement numbers. There is a huge variance in upvotes values with some values being in thousands. Thus, I would need to have some sort of normalization but it is not directly clear what it should be since there in no pre-defined range. 
