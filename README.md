@@ -37,7 +37,7 @@ Change the model path in `run_test.sh` after training or use it as it is to test
 Note: All the terminal logs will in the `./logs` directory
 
 ## Take-aways
-In my excitement, I immediately jumped on implementing the current best model (I use DistilBert. Can easily be swapped with Bert) and use it to fine-tune for my task. Later, I realized that I don't have any benchmark to compare my results. <br />
+In my excitement, I immediately jumped on implementing the current best model (I use DistilBert. Can easily be swapped with Bert) and use it to fine-tune for my task. Later, I realized that I don't have any baseline to compare my results. <br />
 Note: Test results can be found in [here](./logs/test_results.txt). I don't have any baseline results to gauge my test results but I believe they are not good rn. 
 
 ## Possible Solutions and Future
