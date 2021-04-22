@@ -11,11 +11,11 @@ I tested it for Python 3.8.6.
 <br />
 Create a virtual environment (preferably).
 <br />
-&emsp;&emsp;&emsp; 1. `pip install -r requirements.txt` <br />
-&emsp;&emsp;&emsp; 2. `mkdir datasets; cd datasets` <br />
-&emsp;&emsp;&emsp; 3. Put the CSV file in this directory <br />
-&emsp;&emsp;&emsp; 4. `cd ..; mkdir models; cd models` <br />
-&emsp;&emsp;&emsp; 5 The fine-tuned model can be found [here](https://drive.google.com/file/d/1-9pezTmcx486Exgo4Bo2eINRoqJNwdPz/view?usp=sharing). Download it and put in the models dir.
+1. `pip install -r requirements.txt` <br />
+2. `mkdir datasets; cd datasets` <br />
+3. Put the CSV file in this directory <br />
+4. `cd ..; mkdir models; cd models` <br />
+5 The fine-tuned model can be found [here](https://drive.google.com/file/d/1-9pezTmcx486Exgo4Bo2eINRoqJNwdPz/view?usp=sharing). Download it and put in the models dir.
 
 
 ## Usage
