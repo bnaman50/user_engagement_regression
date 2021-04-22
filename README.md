@@ -30,4 +30,4 @@ Note: All the terminal logs will in the `./logs` directory
 
 ## Take-aways
 In my excitement, I immediately jumped on implementing the current best model and use it to fine-tune for my task. Later, on I realized that I don't have any benchmark to compare my results. <br />
-Note: Test results can be found in 
+Note: Test results can be found in [here](./logs/test_results.txt)
