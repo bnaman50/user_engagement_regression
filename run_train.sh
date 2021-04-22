@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+mkdir logs/
 export BS=32 ## batch size
 export GAS=1 ## gradient accumulation steps
 export CUDA_VISIBLE_DEVICES=0

@@ -1,5 +1,6 @@
 #!/usr/bin/env bash
 
+mkdir logs/
 export CUDA_VISIBLE_DEVICES=0
 
 nohup python -u test_model.py \
