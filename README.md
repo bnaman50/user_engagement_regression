@@ -15,7 +15,7 @@ Create a virtual environment (preferably).
 2. `mkdir datasets; cd datasets` <br />
 3. Put the CSV file in this directory <br />
 4. `cd ..; mkdir models; cd models` <br />
-5 The fine-tuned model can be found [here](https://drive.google.com/file/d/1-9pezTmcx486Exgo4Bo2eINRoqJNwdPz/view?usp=sharing). Download it and put in the models dir.
+5. The fine-tuned model can be found [here](https://drive.google.com/file/d/1-9pezTmcx486Exgo4Bo2eINRoqJNwdPz/view?usp=sharing). Download it and put in the models dir.
 
 
 ## Usage
