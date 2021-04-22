@@ -1,5 +1,11 @@
 # user_engagement_regression
 
+## Problem Description
+Trainig data can be found [here](https://drive.google.com/file/d/15X00ZWBjla7qGOIW33j8865QdF89IyAk/view). The dataset is tabular and the features involved should be self-explanatory. The problem should be treated as large-scale, as the dataset is large (e.g., >100GB) and will not fit into the RAM of your machine.
+<br /><br />
+I chose to implement the user-engagement prediction. Curently, I consider number of upvotes as the user engagement since downvotes are all zeros but it is easily extensible using my current steup by using (`--num_labels=2`).
+
+
 ## Setup 
 I tested it for Python 3.8.6. 
 <br />
@@ -19,7 +25,7 @@ Create a virtual environment (preferably).
 ### Training
 `bash run_train.sh`
 <br /><br />
-It will create a `lightning_logs` directory in your current directory. Each run will have its own fine-tuned model and the tensorboard plots.
+It will create a `lightning_logs` directory in your current directory. Each run will have its own fine-tuned model and the tensorboard plots. You can also check the path of the best model in the logs file
 
 ### Testing
 Change the model path in `run_test.sh` after training or use it as it is to test on already fine-tuned model. 
@@ -30,4 +36,12 @@ Note: All the terminal logs will in the `./logs` directory
 
 ## Take-aways
 In my excitement, I immediately jumped on implementing the current best model and use it to fine-tune for my task. Later, on I realized that I don't have any benchmark to compare my results. <br />
-Note: Test results can be found in [here](./logs/test_results.txt)
+Note: Test results can be found in [here](./logs/test_results.txt). I don't have any baseline results to gauge my test results but I believe they are not good rn. 
+
+## Possible Solutions and Future
+1. Implement a simple TF-IDF based solution to be used as a baseline.
+2. In my current setup, I am clipping the gradient norm at 1 which is considered to be a good practice. Both the training and validation loss are going down as can be seen here, but it is very slow and requires a lot more training.
+3. Another possible reason for slow training (which is accentuated by previous reason) is that I am directly regressing on the raw user engagement numbers. There is a huge variance in upvotes values with some values being in thousands. Thus, I would need to have some sort of normalization but it is not directly clear what it should be since there in no pre-defined range. 
+4. Implementing a data-loader for huge file was new thing to me. For the time being, I implemenetd a simple solution which uses the PyTorch's 'map-style' dataset. But it is slow. Thus, I would try to implement 'iterable-style' dataset (I tried it out but there were some issues such as duplicate data on multiple workers, not being able to randomize the training data etc.)
+
+
