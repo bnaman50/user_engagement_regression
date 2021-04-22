@@ -1,24 +1,14 @@
 import argparse
-import glob
 import os
 import sys
 import time
-import ipdb
-from collections import defaultdict
 from srblib import abs_path
-import copy
-import numpy as np
 import pytorch_lightning as pl
-import torch
-from torch.utils.data import DataLoader
-import pandas as pd
 from my_utils import mkdir_p
 import warnings
 warnings.filterwarnings("ignore")
 
-## TODO: Fine-tuning from checkpoint, Learning Rate Scheduler (based on what was used in the paper),
-
-import settings
+## TODO: Fine-tuning from checkpoint, LR_Tuner
 from regression_model_and_dataset import BertForRegression, LoggingCallback
 
 def get_arguments():
@@ -35,8 +25,6 @@ def get_arguments():
 
     ## Trainer Arguments
     parser = pl.Trainer.add_argparse_args(parser)
-
-
 
     ## Parse the arguments
     return parser.parse_args()
@@ -68,7 +56,6 @@ def main(args):
         args.verbose = True
         args.max_epochs = 2
 
-    # ipdb.set_trace()
     ## Model
     dict_vars = vars(args)
     model = BertForRegression(**dict_vars)
@@ -92,7 +79,6 @@ def main(args):
     trainer.fit(model)
     best_model_path = trainer.checkpoint_callback.best_model_path
     print(f'\nBEST MODEL PATH IS {best_model_path}')
-    aa = 1
 
 
 # Press the green button in the gutter to run the script.

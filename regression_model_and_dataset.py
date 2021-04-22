@@ -9,7 +9,6 @@ import os
 import math
 import traceback
 from nested_lookup import nested_lookup
-import ipdb
 from transformers import (
     AutoModelForSequenceClassification,
     AutoTokenizer,
@@ -17,19 +16,23 @@ from transformers import (
     get_linear_schedule_with_warmup,
 )
 import settings
-from my_utils import mkdir_p
 
 ## TODO:
 '''
 Most of the time is spent in data loading based on the profiler. 
-1. I could either increase the chunkSize for pd.read_csv.
 One of the downsides of this data-loader is that I need to specify the training samples beforehand. 
 In future, I would like to implement IterableDataset along with BufferedShuffleDataset for train data 
 shuffling to certain extent.
 '''
+
 # Create Dataset
 class CSVDataset(Dataset):
     def __init__(self, path, tokenizer, nb_samples):
+        """
+        :param path: Path to the CSV file
+        :param tokenizer: tokenizer
+        :param nb_samples: total samples in the corresponding file
+        """
         super().__init__()
         self.path = path
         self.chunksize = 1
@@ -69,7 +72,9 @@ class CSVDataset(Dataset):
         except Exception as e:
             print(e)
             print(traceback.print_exc())
-            aa = 1
+            print('I was facing some weird error. Realized that I am running out of RAM becaus of very high num-workers')
+            print('If you also see it, reduce you number of workers')
+            sys.exit(0)
 
         batch_encoding["labels"] = torch.tensor([x for x in up_votes])
         return batch_encoding
