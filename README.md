@@ -1,7 +1,7 @@
 # user_engagement_regression
 
 ## Problem Description
-Trainig data can be found [here](https://drive.google.com/file/d/15X00ZWBjla7qGOIW33j8865QdF89IyAk/view). The dataset is tabular and the features involved should be self-explanatory. The problem should be treated as large-scale, as the dataset is large (e.g., >100GB) and will not fit into the RAM of your machine.
+Trainig data can be found [here](https://www.kaggle.com/rootuser/worldnews-on-reddit). The dataset is tabular and the features involved should be self-explanatory. The problem should be treated as large-scale, as the dataset is large (e.g., >100GB) and will not fit into the RAM of your machine.
 <br /><br />
 I chose to implement the user-engagement prediction. Curently, I consider number of upvotes as the user engagement since downvotes are all zeros but it is easily extensible using my current steup by using (`--num_labels=2`).
 
