@@ -1,6 +1,6 @@
 # user_engagement_regression
 
-I was given the World News Reddit data by [Eluvio](https://eluvio.co/) as a part of my application for the internship position and was told to come up with an interesting problem within a week's period. After spending some time on basic data analysis, I decided to implemented user-engagement (upvotes) prediction by fine-tuning a state-of-the-art language model. 
+I was given the World News Reddit data by [Eluvio](https://eluvio.co/) as a part of my application for the internship position and was told to come up with an interesting problem within a week's period. After spending some time on basic data analysis, I decided to implemented user-engagement (upvotes) prediction by fine-tuning a the Bert model. 
 
 ## Problem Description
 Trainig data can be found [here](https://www.kaggle.com/rootuser/worldnews-on-reddit). The dataset is tabular and the features involved should be self-explanatory. The problem should be treated as large-scale, as the dataset is large (e.g., >100GB) and will not fit into the RAM of your machine.
